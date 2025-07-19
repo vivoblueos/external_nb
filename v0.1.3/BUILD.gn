@@ -1,0 +1,9 @@
+import("//build/templates/build_template.gni")
+build_rust("nb") {
+  crate_type = "rlib"
+  epoch = "0.1.3"
+  sources = [ "src/lib.rs" ]
+  edition = "2015"
+  deps = [ "//external/nb/v1.1.0:nb" ]
+  rustflags = [ "--cap-lints=allow" ]
+}
